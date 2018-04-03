@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filter">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app=angular.module("filter",[]);
+        app.directive('directive1',function () {
+            var json={
+                restrict:'E',//约束 element Attribute Class comm
+                template: '<span>directive restrict template</span>'// 模板
+            };
+            return json;
+        });
+        app.controller('cont7',function ($scope) {
+            $scope.arr=[21,2,345,6,7,94];
+        });
+    </script>
+</head>
+<body ng-controller="cont7">
+    <directive1></directive1>
+    <!--<div directive=""></div>-->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filter">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app=angular.module("filter",[]);
+        app.filter('filter1',function () {
+           return function (input,arg) {
+               return input+arg;
+           };
+        });
+        app.controller('cont7',function ($scope) {
+            $scope.arr=[21,2,345,6,7,94];
+        });
+    </script>
+</head>
+<body ng-controller="cont7">
+    <ul>
+        <li ng-repeat="a in arr">{{a|filter1:6}}</li>
+    </ul>
+</body>
+</html>
